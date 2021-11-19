@@ -1,0 +1,401 @@
+*,html,body{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+ul{
+  list-style: none;
+}
+
+/* Variables */
+:root{
+  --dark-text-color: hsl(0, 0%, 15%);
+  --light-text-color: hsl(0, 0%, 98%);
+  
+  --logo-theme-color: hsl(46, 100%, 50%);
+  
+  --logo-font-size: 700 1.5rem 'Poppins', sans-serif;
+  --default-font-size: 400 1rem 'Poppins', sans-serif;
+
+  --title-font-size: 700 2.8rem 'Poppins', sans-serif;
+  --subtitle-font-size: 400 1.5rem 'Poppins', sans-serif;
+
+  --opacity-bg-color: hsl(0,0%,0%, 0.45);
+  --light-bg-color: hsl(0, 0%, 94%);
+}
+
+/* Default */
+body{
+  font: var(--default-font-size);
+  background-color: var(--logo-theme-color);
+
+}
+
+::-webkit-scrollbar{
+  width:5px;
+  background:#222;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--logo-theme-color);
+}
+/* Navbar */
+header{
+  width: 100%;
+  max-width: 1400px;
+}
+
+header nav{
+  width: 100%;
+  max-width: 1400px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position:relative;
+
+  padding: 0 1rem;
+
+  background: #fff
+}
+
+header nav a{
+  text-decoration: none;
+}
+
+/* Navbar Logo */
+.nav-logo a,
+  .nav-logo h1,
+  .nav-logo span{
+  font: var(--logo-font-size);
+  color: var(--dark-text-color);
+}
+
+.nav-logo span{
+  color: var(--logo-theme-color)
+}
+
+/* Navbar Menu (Links) */
+.nav-menu{
+ display: flex;
+ flex-grow: 10;
+}
+
+.nav-menu li{
+  margin: 0 20px ;
+}
+
+.nav-menu li a{
+  color: var(--dark-text-color);
+
+  position: relative;
+
+  transition: all .4s ease;
+}
+
+.nav-menu li a::before{
+  content: " ";
+  
+  width: 0%;
+  height:2px;
+  
+  position: absolute;
+  bottom: -4px;
+  
+  background: var(--logo-theme-color);
+
+  transition: all .4s ease;
+}
+
+.nav-menu li a:hover{
+  color: var(--logo-theme-color);
+}
+
+.nav-menu li a:hover::before{
+  width: 100%;
+}
+
+/* Navbar Options (Login/Sign Up) */
+.nav-options a{
+  color: var(--dark-text-color);
+  transition: all .4s ease;
+}
+
+.nav-options a:hover{
+  color: var(--logo-theme-color);
+}
+
+.nav-options a:nth-child(2){
+  margin-left: 12px;
+  padding: 0.5rem 0.8rem;
+
+  border:none;
+  border-radius:0.5rem;
+
+  background: var(--logo-theme-color);
+  color: var(--light-text-color); 
+}
+
+.nav-options a:nth-child(2):hover{
+  filter: brightness(0.95);
+}
+
+.navbar-toggle-btn{
+  display:none;
+}
+/* ===== End navbar ===== */
+
+/* Pages */
+#home{
+  width: 100%;
+
+  height: 100vh;
+
+  display: flex;
+}
+
+#home.landing{
+  background: var(--light-bg-color);
+  position: relative;
+}
+
+#home.login{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+}
+
+#home.register{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: row-reverse;
+}
+
+/* Home Presentation */
+.home-presentation{
+  width: 50%;
+  height: 100%;
+
+  position: relative;
+
+  background: var(--opacity-bg-color);
+  color: var(--light-text-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.home-presentation.register{
+  align-items: flex-end;
+
+}
+
+.home-presentation-background{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  position: absolute;
+
+  z-index: -1;
+}
+
+.home-presentation h1{
+  width: 80%;
+
+  font: var(--title-font-size);
+
+  position: relative;
+
+  margin-bottom: 2.5rem;
+  margin-left: 1rem;
+}
+
+.home-presentation h1::before{
+  content: " ";
+
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  bottom: -4px;
+  
+  background: var(--logo-theme-color);
+}
+
+.home-presentation p{
+  font: var(--subtitle-font-size);
+  margin-left: 1rem;
+}
+
+.home-presentation.register h1, .home-presentation.register p{
+  width: 60%;
+  text-align: center;
+  align-self: center;
+}
+
+/* ===== End home presentation ===== */
+
+/* Home form */
+.home-form{
+  width: 50%;
+  height:100%;
+
+  display: grid;
+  place-content: center;
+  place-items: center;
+
+  background: var(--light-bg-color);
+}
+
+.home-form h1, .home-form span{
+  font: var(--subtitle-font-size);
+  font-weight: 700;
+
+  color: var(--dark-text-color);
+
+  margin-bottom: 1.5rem;
+}
+
+.home-form span{
+  color: var(--logo-theme-color);
+}
+
+.home-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-form form input, button{
+  width: 260px;
+  height:50px;
+
+  border: none;
+
+  outline:none;
+
+  margin: 8px;
+  padding: 5px 10px;
+
+  font-size: 1rem;
+
+  border-radius: 8px;
+}
+
+.home-form form button{
+
+  font: var(--default-font-size);
+
+  background: var(--logo-theme-color);
+  color: var(--light-text-color);
+  
+  border: 1px solid var(--logo-theme-color);
+
+}
+
+.home-form form button:hover{
+  filter: brightness(0.9);
+}
+/* ===== End Home form ===== */
+
+/* ===== End Page ===== */
+
+/* Footer */
+footer{
+  width: 100%;
+  height: 70px;
+
+  display:flex;
+  justify-content:center;
+  align-items: center;
+
+  background: #fff
+}
+
+footer .footer-copyright{
+  color: var(--dark-text-color)
+}
+
+footer .footer-copyright a{
+  color: var(--logo-theme-color);
+}
+/* ===== End footer ===== */
+
+/* Mobile Style */
+@media screen  and (max-width: 768px){
+
+  /* navbar */
+  header nav{
+    flex-direction: column;
+    justify-content:space-evenly;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu, .nav-options{
+    flex-grow: 0;
+    flex-direction: column;
+    align-items: center;
+    display:none;
+  }
+
+  .navbar-toggle-btn{
+    display: block;
+  }
+
+  .nav-options a:nth-child(2){
+    margin: 0;
+  }
+
+  /* Navbar Active */
+  header nav.active{
+    height:50vh;
+  }
+
+  header nav.active .nav-menu, header nav.active .nav-options{
+    display:flex;
+  }
+
+  /* pages */
+
+  /* Login and Register */
+  #home.login, #home.register{
+    flex-direction: column;
+  }
+
+  #home.login .home-presentation,
+  #home.login .home-form,
+  #home.register .home-presentation,
+  #home.register .home-form{
+    width: 100%;
+  }
+
+  #home.register .home-presentation h1{
+    width: 90%;
+    margin-left: 0;
+  }
+
+  #home.register .home-presentation h1::before{
+    width:90%;
+  }
+
+  #home.login .home-presentation p,
+  #home.register .home-presentation p{
+    margin-bottom: 1rem;
+  }
+  /* ===== End Logina and Register ===== */
+}
