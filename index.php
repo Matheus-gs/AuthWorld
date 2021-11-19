@@ -30,10 +30,15 @@
 </head>
 
 <body>
+  <!-- Loader -->
+  <div id="loading">
+    <div id="loader"></div>
+  </div>
 
   <!-- Navbar -->
   <header>
-    <nav class=''>
+
+    <nav>
       <!--  -->
 
       <div class="nav-logo">
@@ -58,11 +63,15 @@
 
       <!--  -->
     </nav>
+
   </header>
+
 
   <!-- Page -->
   <main>
+
     <?php
+
     include("./connect.php");
 
     $_page = @$_GET['page'];
@@ -86,6 +95,7 @@
     }
 
     ?>
+
   </main>
 
   <!-- Footer -->
